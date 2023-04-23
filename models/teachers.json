@@ -1,0 +1,26 @@
+{
+    "teachers": [
+        {
+            "id": 1,
+            "name": "Mr. John Doe",
+            "email": "Johnd@gmail.com",
+            "phone": "1234567890",
+            "subject_codes": [
+                "CSC3102",
+                "CSC3103",
+                "CSC3104"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Mr. John Doe",
+            "email": "Johnd@gmail.com",
+            "phone": "1234567890",
+            "subject_codes": [
+                "CSC3102",
+                "CSC3103",
+                "CSC3104"
+            ]
+        }
+    ]
+}
