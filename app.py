@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
+from settings import PORT, HOST
 
 app = Flask(__name__)
 
@@ -15,4 +16,5 @@ def index():
     return jsonify({'ping': 'Altair'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+
+    app.run(debug=True, host=HOST, port=PORT)
