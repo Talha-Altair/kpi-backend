@@ -3,6 +3,8 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
+CORS(app, resources={r'/*': {'origins': '*'}})
+
 from routes.teaching import teaching
 
 app.register_blueprint(teaching, url_prefix='/teaching')

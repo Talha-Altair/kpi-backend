@@ -23,9 +23,11 @@ def passpercentage():
 
     payload = request.json
 
-    teacher_id = payload["teacher_id"]
+    teacher_id = int(payload["teacher_id"])
 
     teacher_data = teachers_col.find_one({"teacher_id": teacher_id})
+
+    print(teacher_data)
 
     subject_codes = teacher_data["subject_codes"]
 
@@ -44,10 +46,10 @@ def passpercentage():
 
         final_data['Subject'].append(s['subject_name'])
         final_data['Pass Percentage'].append(p['Pass Percentage'])
-        final_data['year'].append(s['year'])
+        final_data['year'].append(int(s['year']))
         final_data['Subject Code'].append(s['subject_code'])
 
-    return final_data
+    return jsonify(final_data)
 
 
 def get_subject_details(subject_codes):
