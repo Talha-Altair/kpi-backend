@@ -9,6 +9,47 @@ teachers_col = db["teachers"]
 subjects_col = db["subjects"]
 endsem_pass_fail_col = db["endsem_pass_fail"]
 
+@teaching.route("/add", methods=["GET", "POST"])
+def add():
+
+    payload = request.json
+
+    teacher_id = int(payload["teacher_id"])
+
+    teacher_data = teachers_col.find_one({"teacher_id": teacher_id})
+
+    if teacher_data:
+        return jsonify({"message": "Teacher already exists!"})
+
+    teachers_col.insert_one(payload)
+
+    return jsonify({"message": "Teacher added successfully!"})
+
+@teaching.route("/addsubjects", methods=["GET", "POST"])
+def addsubjects():
+
+    payload = request.json
+
+    subject_data = subjects_col.find_one({"subject_code": payload['subject_code']})
+
+    teacher_id = int(payload["teacher_id"])
+
+    teacher_data = teachers_col.find_one({"teacher_id": teacher_id})
+
+    if not teacher_data:
+
+        return jsonify({"message": "Teacher does not exist!"})
+    
+    teachers_col.update_one({"teacher_id": teacher_id}, {"$push": {"subject_codes": payload['subject_code']}})
+
+    if subject_data:
+
+        return jsonify({"message": "Subject already exists!"})
+
+    subjects_col.insert_one(payload)
+
+    return jsonify({"message": "Subject added successfully!"})
+
 
 @teaching.route("/passpercentage", methods=["GET", "POST"])
 def passpercentage():
@@ -26,8 +67,6 @@ def passpercentage():
     teacher_id = int(payload["teacher_id"])
 
     teacher_data = teachers_col.find_one({"teacher_id": teacher_id})
-
-    print(teacher_data)
 
     subject_codes = teacher_data["subject_codes"]
 
@@ -81,8 +120,6 @@ def get_pass_details(subject_codes):
             subject_data = "Subject not found"
 
         pass_details.append(subject_data)
-
-    print(pass_details)
 
     for sub in pass_details:
         sub["Pass Percentage"] = (
