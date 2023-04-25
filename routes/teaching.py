@@ -1,6 +1,9 @@
 from flask import Blueprint, jsonify, request
 import pandas as pd
+from connections import db
 teaching = Blueprint('teaching', __name__)
+
+teachers_col = db['teachers']
 
 
 @teaching.route('/passpercentage', methods=['GET', 'POST'])
@@ -15,6 +18,12 @@ def passpercentage():
     }
     """
     
-    
+    payload = request.json
 
-    return 
+    teacher_id = payload['teacher_id']
+
+    teacher_data = teachers_col.find({'teacher_id': teacher_id})
+
+    subject_codes = teacher_data['subject_codes']
+
+    return subject_codes
