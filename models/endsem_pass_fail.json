@@ -1,0 +1,27 @@
+[
+    {
+        "subject_code": "CSC3102",
+        "num_students_failed": 10,
+        "num_students_passed": 20
+    },
+    {
+        "subject_code": "CS1024",
+        "num_students_failed": 40,
+        "num_students_passed": 90
+    },
+    {
+        "subject_code": "CS2105",
+        "num_students_failed": 40,
+        "num_students_passed": 70
+    },
+    {
+        "subject_code": "CS2106",
+        "num_students_failed": 4,
+        "num_students_passed": 29
+    },
+    {
+        "subject_code": "CS3107",
+        "num_students_failed": 11,
+        "num_students_passed": 56
+    }
+]

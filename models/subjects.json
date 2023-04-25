@@ -1,8 +1,27 @@
-{
-    "subjects": [
-        {
-            "subject_code": "CSC3102",
-            "subject_name": "Software Engineering"
-        }
-    ]
-}
+[
+    {
+        "subject_code": "CSC3102",
+        "subject_name": "Software Engineering",
+        "year": "3"
+    },
+    {
+        "subject_code": "CS1024",
+        "subject_name": "Green Design",
+        "year": "1"
+    },
+    {
+        "subject_code": "CS2105",
+        "subject_name": "SPM",
+        "year": "2"
+    },
+    {
+        "subject_code": "CS2106",
+        "subject_name": "Operating System",
+        "year": "2"
+    },
+    {
+        "subject_code": "CS3107",
+        "subject_name": "Cloud Computing",
+        "year": "3"
+    }
+]
