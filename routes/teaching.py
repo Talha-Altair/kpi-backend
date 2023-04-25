@@ -25,6 +25,26 @@ def add():
 
     return jsonify({"message": "Teacher added successfully!"})
 
+@teaching.route("/add_pass_fail", methods=["GET", "POST"])
+def add_pass_fail():
+
+    payload = request.json
+
+    subject_code = payload["subject_code"]
+
+    payload['num_students_passed'] = int(payload['num_students_passed'])
+    payload['num_students_failed'] = int(payload['num_students_failed'])
+
+    subject_data = subjects_col.find_one({"subject_code": subject_code})
+
+    if not subject_data:
+        
+        return jsonify({"message": "Subject does not exist!"})
+
+    endsem_pass_fail_col.insert_one(payload)
+
+    return jsonify({"message": "Pass fail data added successfully!"})
+
 @teaching.route("/addsubjects", methods=["GET", "POST"])
 def addsubjects():
 
