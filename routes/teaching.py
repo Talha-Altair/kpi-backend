@@ -14,6 +14,8 @@ def add():
 
     payload = request.json
 
+    payload['subject_codes'] = []
+
     teacher_id = int(payload["teacher_id"])
 
     teacher_data = teachers_col.find_one({"teacher_id": teacher_id})

@@ -7,8 +7,10 @@ app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 from routes.teaching import teaching
+from routes.upload import uploader
 
 app.register_blueprint(teaching, url_prefix='/teaching')
+app.register_blueprint(uploader, url_prefix='/upload')
 
 @app.route('/ping')
 def index():
