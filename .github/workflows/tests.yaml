@@ -2,6 +2,9 @@ name: Unit Testing
 
 on: [push]
 
+env:
+  MONGO_URI: ${{ secrets.MONGO_URI }}
+
 jobs:
   build:
 
