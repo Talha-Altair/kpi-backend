@@ -21,11 +21,11 @@ def add():
     teacher_data = teachers_col.find_one({"teacher_id": teacher_id})
 
     if teacher_data:
-        return jsonify({"message": "Teacher already exists!"})
+        return jsonify({"message": "Teacher already exists!"}), 400
 
     teachers_col.insert_one(payload)
 
-    return jsonify({"message": "Teacher added successfully!"})
+    return jsonify({"message": "Teacher added successfully!"}), 200
 
 @teaching.route("/add_pass_fail", methods=["GET", "POST"])
 def add_pass_fail():
