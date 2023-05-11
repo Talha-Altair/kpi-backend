@@ -66,6 +66,26 @@ dashboard_data_full = {
         "IEI sponsored One day workshop “ Web application development using PHP & MySql” on 6th April 2018.",
         "One day seminar on “Dine-In Instead Of Dine-Out (FOOD- The Elixir of Life)”, on April 30, 2018, at Jeppiaar SRR Engineering College."
     ],
+    "mou_signed": [
+        "MoU with Unwind Labs for the project titled “Development of Auto BOTS for Integrated CR”",
+        "MoU signed with IBM for the project titled “IBM Career Education Program”",
+        "MoU signed with ICTACT for the project titled “ICTACT Bridge”",
+        "MoU signed with Capgemini for the project titled “Capgemini Career Education Program”",
+    ],
+    "newsletter_released": [
+        "Crescent Line Magazine 2019",
+        "Science and Technology Newsletter",
+        "Atoms Today",
+        "zarwali Magazine",
+        "Crescent Line Magazine 2023",
+    ],
+    "affliate_faculty": [
+        "Dr. Moorthy S (SSN College of Engineering) for Computer Networks",
+        "Dr. S. Suresh (SSN College of Engineering) for Data Mining",
+        "Dr. S. Suresh (Anna University CEG) for Data Science",
+        "Dr. S. Suresh (IIT Madras) for Graphic Design",
+        "Dr. S. Suresh (Kuppam College of Engineering) for React Native Development",
+    ],
     "syllabus_revision": [
         "Data Structures",
         "Software Project Management",
