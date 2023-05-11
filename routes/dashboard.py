@@ -32,6 +32,27 @@ dashboard_data_full = {
         "Operating System",
         "Cloud Computing"
     ],
+    "prof_memberships": [
+        "Member of IEEE",
+        "Member of ACM",
+        "Member of CSI",
+        "Member of IAENG",
+        "Member of ISTE",
+        "Member of IETE"
+    ],
+    "funded_projects": [
+        "A Novel Approach for Improving Opportunities and Challenges in Opinion Mining, Funded by AICTE, 2019-2022",
+        "A Dynamic MooM Dataset Processing under TelMED protocol design for QoS improvisation of telemedicine environment, Funded by IEEE, 2019-2022",
+        "Architecture to Minimize Energy Consumption in Cloud Datacenter, International Conference on Intelligent Computing and Applications, Springer Funded by NCERT, 2019-2022",
+        "A Acquiring Quality of Service and Quality of Experience Parameter of PaaS Cloud Renderfarm Services, Funded by Govt TN, 2019-2022"
+    ],
+    "workshops_organized": [
+        "One day workshop on “Basics of CorelDraw and Photoshop” on 12th June 2018 at Jeppiaar SRR",
+        "Two days workshop on “Opportunities and Challenges in Opinion Mining” on 2nd April 2018.",
+        "workshop on “Impact of Predictive analysis on Big data” on 4th April 2018.",
+        "One day workshop on “ Web application development using PHP & MySql” on 6th April 2018.",
+        "seminar on “Dine-In Instead Of Dine-Out (FOOD- The Elixir of Life)”, on April 30, 2018, at Jeppiaar SRR Engineering College."
+    ],
     "teaching_methods": [
         "Slow Paced Lectures",
         "Focus onCase Study",
