@@ -76,7 +76,7 @@ dashboard_data_full = {
         "Crescent Line Magazine 2019",
         "Science and Technology Newsletter",
         "Atoms Today",
-        "zarwali Magazine",
+        "zarwaliya Magazine",
         "Crescent Line Magazine 2023",
     ],
     "affliate_faculty": [
