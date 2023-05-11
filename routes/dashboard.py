@@ -15,6 +15,7 @@ dashboard_data_full = {
         "doj": "21-09-2017",
         "exp": "12 Years",
         "served_in_crescent": "6 Years",
+        "total_experience": "22 Years",
         "research": [
             "Data Mining",
             "Machine Learning",
