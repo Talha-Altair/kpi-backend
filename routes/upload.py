@@ -2,30 +2,33 @@ from flask import Blueprint, jsonify, request
 import pandas as pd
 from connections import db
 import io
+import json
 
 uploader = Blueprint("uploader", __name__)
 
-teachers_col = db["teachers"]
-subjects_col = db["subjects"]
-endsem_pass_fail_col = db["endsem_pass_fail"]
+dashboard_col = db["dashboard"]
 
 @uploader.route("/", methods=["GET", "POST"])
 def upload_csv():
 
     payload = request.json
 
-    if payload["name"] == "teachers":
+    username = payload["username"]
 
-        col = teachers_col
+    payload = payload["data"]
 
-    json_data = pd.read_csv(io.StringIO(payload["file"]), encoding="utf-8", sep=",")
+    payload["username"] = username
 
-    json_data = json_data.to_dict(orient="records")
+    payload['basic']['name'] = username
 
-    for data in json_data:
+    payload['basic']['email'] = username + "@crescent.education"
 
-        data["subject_codes"] = []
+    try:
 
-    col.insert_many(json_data)
+        dashboard_col.insert_one(payload)
 
-    return jsonify({"message": "success"}), 200
+        return jsonify({"message": "success"}), 200
+    
+    except Exception as e:
+            
+        return jsonify({"message": "failure"}), 400

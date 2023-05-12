@@ -266,17 +266,18 @@ dashboard_data_full = {
 @dashboard.route("/<string:username>", methods=["GET", "POST"])
 def dashboard_data(username):
 
-    # try:
-    #     user_data = dashboard.find_one({"username": username})
+    try:
+        user_data = dashboard_col.find_one({"username": username})
 
-    #     del user_data["_id"]
+        del user_data["_id"]
 
-    #     return jsonify(user_data), 200
 
-    # except Exception as e:
+        return jsonify(user_data), 200
 
-    #     print(e)
+    except Exception as e:
 
-    #     return jsonify({"message": "Error Occured"}), 500
+        print(e)
+
+        return jsonify({"message": "Error Occured"}), 500
 
     return jsonify(dashboard_data_full), 200
